@@ -1,5 +1,5 @@
 controllers:
-    resource: ../src/Controller/
+    resource: ../src/Post/
     type: annotation
 
 kernel:
