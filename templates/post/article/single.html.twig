@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PostsController!{% endblock %}
+
+{% block body %}
+<div class="container mx-auto">
+    <article class="max-w-screen-md  mx-auto">
+        <img class="min-w-full" src="https://loremflickr.com/800/200" alt="Random image for post">
+        <h1 class="mt-6 font-mono text-5xl capitalize">{{ article.title }}</h1>
+        <h2 class="text-lg">{{ author.name }} |<span class="mx-1">{{ author.abstract }}</span></h2>
+        <p class="mt-6 max-w-prose">{{ article.content }}</p>
+        <a class="underline font-bold block bg-blue-400 max-w-[25%] text-center p-2 mt-6" href="{{ path('get_articles_list') }}">Volver al listado</a>
+    </article>
+
+
+</div>
+{% endblock %}

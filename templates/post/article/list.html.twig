@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PostsController!{% endblock %}
+
+{% block body %}
+
+<style>
+    .post-list{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .post{
+        display: flex;
+        flex-direction: column;
+        width: 32%;
+        margin-bottom: 30px;
+    }
+
+    .post h2 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+</style>
+
+<div class="container mx-auto">
+    <div class="post-list">
+        {% for article in articles %}
+            <article class="post">
+                <a href="{{ path('get_article',{ 'id': article.id }) }}">
+                    <img src="https://loremflickr.com/400/200" alt="">
+                    <h2>{{ article.title }}</h2>
+                    <p>{{ article.content }}</p>
+                </a>
+            </article>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
